@@ -1,8 +1,10 @@
 # 1. Các bước viết unit test:
 
-- Write a failing test
-- Make the test pass
-- Refactor
+- Identify all possible case
+- Specify parameters and expected results for each case
+- Write test
+- Execute test
+- Evaluation and assessment of results
 
 # 2. Các thành phần cơ bản có trong 1 unit test:
 
