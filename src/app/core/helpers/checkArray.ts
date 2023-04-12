@@ -1,6 +1,6 @@
-export const checkArray = (array: number[]) => {
+export const isAscendingArray = (array: number[]) => {
   const isNumberArray = array?.every((item) => typeof item === "number");
-  if (!array || array.length <= 1 || !isNumberArray) {
+  if (!isNumberArray || array.length === 0) {
     return false;
   } else {
     const newArray = [...array];
