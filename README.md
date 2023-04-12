@@ -22,7 +22,7 @@
 |       null       | false |
 |    undefined     | false |
 |        []        | false |
-|       [1]        | false |
+|       [1]        | true  |
 |    [1, 2, 4]     | true  |
 | [1.23, 1.234, 4] | true  |
 |    [0, 0, 4]     | true  |
