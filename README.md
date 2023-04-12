@@ -16,15 +16,15 @@
 
 # 3. Test cases:
 
-|      Before      | After |
-| :--------------: | :---: |
-|    [1, 7, 5]     | false |
-| [1, 5, 7, null]  | false |
-|    [1, -5, 7]    | false |
-|       null       | false |
-|    undefined     | false |
-|        []        | false |
-|       [1]        | true  |
-|    [1, 2, 4]     | true  |
-| [1.23, 1.234, 4] | true  |
-|    [0, 0, 4]     | true  |
+|      input       | output |
+| :--------------: | :----: |
+|    [1, 7, 5]     | false  |
+| [1, 5, 7, null]  | false  |
+|    [1, -5, 7]    | false  |
+|       null       | false  |
+|    undefined     | false  |
+|        []        | false  |
+|       [1]        |  true  |
+|    [1, 2, 4]     |  true  |
+| [1.23, 1.234, 4] |  true  |
+|    [0, 0, 4]     |  true  |
