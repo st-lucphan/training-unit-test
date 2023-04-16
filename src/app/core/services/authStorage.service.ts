@@ -5,19 +5,19 @@ export interface AuthStorage {
 }
 
 export class AuthStorageService implements AuthStorage {
-  ACCESS_TOKEN = 'token';
+  ACCESS_TOKEN = "token";
 
   setToken(token?: any) {
     if (token) {
-      localStorage.setItem(this.ACCESS_TOKEN, token);
+      window.localStorage.setItem(this.ACCESS_TOKEN, token);
     }
   }
 
   getToken() {
-    return localStorage.getItem(this.ACCESS_TOKEN);
+    return window.localStorage.getItem(this.ACCESS_TOKEN);
   }
 
   removeToken() {
-    localStorage.removeItem(this.ACCESS_TOKEN);
+    window.localStorage.removeItem(this.ACCESS_TOKEN);
   }
 }
