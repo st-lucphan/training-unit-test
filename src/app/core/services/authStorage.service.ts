@@ -5,7 +5,7 @@ export interface AuthStorage {
 }
 
 export class AuthStorageService implements AuthStorage {
-  ACCESS_TOKEN = 'token';
+  ACCESS_TOKEN = "token";
 
   setToken(token?: any) {
     if (token) {
