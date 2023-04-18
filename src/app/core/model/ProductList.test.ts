@@ -52,8 +52,14 @@ const dataUpdate: Product = {
 };
 describe("test product order", () => {
   const error = "Invalid param";
+  let order;
+  beforeEach(() => {
+    order = new ProductList([]);
+  });
+  afterEach(() => {
+    order.clearProductList();
+  });
   describe("add product method", () => {
-    const order = new ProductList([]);
     it("should add product successfully", () => {
       order.addProduct(data);
       expect(order.getProductList()).toHaveLength(1);
@@ -66,9 +72,9 @@ describe("test product order", () => {
   });
 
   describe("get product method", () => {
-    const order = new ProductList([data]);
-    const product = order.getProduct("1");
     it("should get product successfully", () => {
+      order.addProduct(data);
+      const product = order.getProduct("1");
       expect(product).toEqual(data);
     });
     it("should return error with invalid param", () => {
@@ -78,9 +84,9 @@ describe("test product order", () => {
   });
 
   describe("remove product method", () => {
-    const order = new ProductList([data]);
-    order.removeProduct("1");
     it("should remove product successfully", () => {
+      order.addProduct(data);
+      order.removeProduct("1");
       expect(order.productList).toEqual([]);
     });
     it("should return error with invalid param", () => {
@@ -90,9 +96,9 @@ describe("test product order", () => {
   });
 
   describe("update product method", () => {
-    const order = new ProductList([data]);
-    order.updateProduct(dataUpdate);
     it("should update product successfully", () => {
+      order.addProduct(data);
+      order.updateProduct(dataUpdate);
       expect(order.productList).toEqual([dataUpdate]);
     });
     it("should return error with invalid param", () => {
@@ -102,7 +108,6 @@ describe("test product order", () => {
   });
 
   describe("countTotalPayment method", () => {
-    const order = new ProductList([]);
     it("should return total = 0 in case empty product list", () => {
       expect(order.countTotalPayment()).toEqual(0);
     });

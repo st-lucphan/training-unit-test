@@ -1,5 +1,3 @@
-import { error } from "console";
-
 type Discount = {
   percent: number;
   number: number;
@@ -58,6 +56,10 @@ export class ProductList {
     } else {
       return "Invalid param";
     }
+  }
+
+  clearProductList() {
+    this.productList = [];
   }
 
   countTotalPayment() {
