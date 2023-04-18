@@ -1,3 +1,5 @@
+import { error } from "console";
+
 type Discount = {
   percent: number;
   number: number;
@@ -22,24 +24,40 @@ export class ProductList {
     return this.productList;
   }
   addProduct(product: Product) {
-    this.productList.push(product);
+    if (product) {
+      this.productList.push(product);
+    } else {
+      return "Invalid param";
+    }
   }
   getProduct(id: string) {
-    return this.productList.find((item: Product) => item.id === id);
+    if (id) {
+      return this.productList.find((item: Product) => item.id === id);
+    } else {
+      return "Invalid param";
+    }
   }
   removeProduct(id: string) {
-    this.productList = this.productList.filter(
-      (item: Product) => item.id !== id
-    );
+    if (id) {
+      this.productList = this.productList.filter(
+        (item: Product) => item.id !== id
+      );
+    } else {
+      return "Invalid param";
+    }
   }
 
   updateProduct(product: Product) {
-    this.productList = this.productList.map((item: Product) => {
-      if (item.id === product.id) {
-        return product;
-      }
-      return item;
-    });
+    if (product) {
+      this.productList = this.productList.map((item: Product) => {
+        if (item.id === product.id) {
+          return product;
+        }
+        return item;
+      });
+    } else {
+      return "Invalid param";
+    }
   }
 
   countTotalPayment() {

@@ -51,12 +51,17 @@ const dataUpdate: Product = {
   ],
 };
 describe("test product order", () => {
+  const error = "Invalid param";
   describe("add product method", () => {
     const order = new ProductList([]);
-    order.addProduct(data);
-    it("should update product successfully", () => {
+    it("should add product successfully", () => {
+      order.addProduct(data);
       expect(order.getProductList()).toHaveLength(1);
       expect(order.productList).toContainEqual(data);
+    });
+    it("should return error with invalid param", () => {
+      expect(order.addProduct(null)).toMatch(error);
+      expect(order.addProduct(undefined)).toMatch(error);
     });
   });
 
@@ -66,6 +71,10 @@ describe("test product order", () => {
     it("should get product successfully", () => {
       expect(product).toEqual(data);
     });
+    it("should return error with invalid param", () => {
+      expect(order.getProduct(null)).toMatch(error);
+      expect(order.getProduct(undefined)).toMatch(error);
+    });
   });
 
   describe("remove product method", () => {
@@ -73,6 +82,10 @@ describe("test product order", () => {
     order.removeProduct("1");
     it("should remove product successfully", () => {
       expect(order.productList).toEqual([]);
+    });
+    it("should return error with invalid param", () => {
+      expect(order.removeProduct(null)).toMatch(error);
+      expect(order.removeProduct(undefined)).toMatch(error);
     });
   });
 
@@ -82,13 +95,19 @@ describe("test product order", () => {
     it("should update product successfully", () => {
       expect(order.productList).toEqual([dataUpdate]);
     });
+    it("should return error with invalid param", () => {
+      expect(order.updateProduct(null)).toMatch(error);
+      expect(order.updateProduct(undefined)).toMatch(error);
+    });
   });
 
   describe("countTotalPayment method", () => {
-    const order = new ProductList([data]);
-    order.countTotalPayment();
-
+    const order = new ProductList([]);
+    it("should return total = 0 in case empty product list", () => {
+      expect(order.countTotalPayment()).toEqual(0);
+    });
     it("should count total payment correctly", () => {
+      order.addProduct(data);
       expect(order.countTotalPayment()).toEqual(950);
       order.addProduct(data2);
       expect(order.countTotalPayment()).toEqual(2750);
