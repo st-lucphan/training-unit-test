@@ -1,5 +1,5 @@
-import { createReducer } from "@app/core/helpers/reducer-factory";
-import ACTION_TYPES from "@app/core/constants/types";
+import { createReducer } from '@app/core/helpers/reducer-factory';
+import ACTION_TYPES from '@app/core/constants/types';
 
 const initialState = {
   isLoading: false,

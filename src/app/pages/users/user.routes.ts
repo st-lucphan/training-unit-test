@@ -1,27 +1,27 @@
-import React from "react";
+import React from 'react';
 
-import { PageRoute } from "@core/modules/custom-router-dom/router.interface";
+import { PageRoute } from '@core/modules/custom-router-dom/router.interface';
 
-const Users = React.lazy(() => import("./containers/Users"));
-const UserList = React.lazy(() => import("./containers/UserList"));
-const UserDetail = React.lazy(() => import("./containers/UserDetail"));
-const Error = React.lazy(() => import("./containers/Error"));
+const Users = React.lazy(() => import('./containers/Users'));
+const UserList = React.lazy(() => import('./containers/UserList'));
+const UserDetail = React.lazy(() => import('./containers/UserDetail'));
+const Error = React.lazy(() => import('./containers/Error'));
 
 const userRoutes: PageRoute[] = [
   {
-    path: "/users",
+    path: '/users',
     element: Users,
     children: [
       {
-        path: "",
+        path: '',
         element: UserList,
       },
       {
-        path: ":id",
+        path: ':id',
         element: UserDetail,
       },
       {
-        path: "error",
+        path: 'error',
         element: Error,
       },
     ],

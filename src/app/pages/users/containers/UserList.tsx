@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { deleteUser, getListUser } from "../user.action";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { deleteUser, getListUser } from '../user.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 
 const UserList = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const UserList = () => {
 
   useEffect(() => {
     if (hasError) {
-      navigate("/user/error");
+      navigate('/user/error');
     }
   }, [hasError]);
 
