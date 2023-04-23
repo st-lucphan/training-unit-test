@@ -1,5 +1,5 @@
 export const isAscendingArray = (array: number[]) => {
-  const isNumberArray = array?.every((item) => typeof item === "number");
+  const isNumberArray = array?.every((item) => typeof item === 'number');
   if (!isNumberArray || array.length === 0) {
     return false;
   } else {
