@@ -25,14 +25,14 @@ export class ProductList {
     if (product) {
       this.productList.push(product);
     } else {
-      return "Invalid param";
+      return 'Invalid param';
     }
   }
   getProduct(id: string) {
     if (id) {
       return this.productList.find((item: Product) => item.id === id);
     } else {
-      return "Invalid param";
+      return 'Invalid param';
     }
   }
   removeProduct(id: string) {
@@ -41,7 +41,7 @@ export class ProductList {
         (item: Product) => item.id !== id
       );
     } else {
-      return "Invalid param";
+      return 'Invalid param';
     }
   }
 
@@ -54,7 +54,7 @@ export class ProductList {
         return item;
       });
     } else {
-      return "Invalid param";
+      return 'Invalid param';
     }
   }
 
