@@ -1,12 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-const Page = () => {
+const Users = () => {
   return (
-    <div className="pages-container">
+    <>
       <Outlet />
-    </div>
+    </>
   );
 };
 
-export default Page;
+export default Users;
